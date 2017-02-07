@@ -33,3 +33,5 @@ Route::get('/edit/{id}', function($id){
 });
 
 Route::post('/edit/{id}', 'ProductController@edit');
+
+// Route::post('/add/comment', 'ProductController');

@@ -1,9 +1,35 @@
 
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+// @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
 
 // Variables
-@import "variables";
+// @import "variables";
 
 // Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+//css
+
+div.ui.centered.card.product{
+  width: 60%;
+  height: auto;
+  padding: 1%;
+  justify-content: center;
+}
+
+div.modifyProduct {
+  display: flex;
+  // flex-direction: row;
+  justify-content: space-around;
+}
+
+div.modifyStock {
+  margin: 1% auto;
+  display: flex;
+  align-items: center;
+
+  width: auto;
+  span {
+    margin: 2%;
+  }
+}
