@@ -8,6 +8,7 @@
   <body>
     <div class="ui container">
       <h1>Welcome in your new Product Manager !</h1>
+      <a href="/">Retourner à l'accueil</a>
 
       @yield('content')
 

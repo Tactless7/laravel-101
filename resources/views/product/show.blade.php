@@ -15,5 +15,8 @@
       <form class="ui form" action="/sell/{{$product->id}}" method="post" id="sellForm">{{ csrf_field() }}
       <button class= "ui button" type="submit" id="sellButton">-</button></form>
     </div>
+    <form action="/addToCart/{{$product->id}}" method="post">
+      <button class="ui primary button" type="submit">Ajouter le produit au panier</button>
+    </form>
   </div>
 @stop
