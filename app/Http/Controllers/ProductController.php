@@ -54,4 +54,18 @@ class ProductController extends Controller
         $product->save();
         return redirect()->route('home');
     }
+
+    public function asyncRestock($id){
+        $product = \App\Product::find($id);
+        $product->stock++;
+        $product->save();
+        return response()->json(['stock' => $product->stock]);
+    }
+
+    public function asyncSell($id){
+      $product = \App\Product::find($id);
+      $product->stock--;
+      $product->save();
+      return response()->json(['stock' => $product->stock]);
+    }
 }
