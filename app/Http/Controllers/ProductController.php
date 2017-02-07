@@ -9,12 +9,12 @@ class ProductController extends Controller
 {
     public function getIndex($id){
       $product = \App\Product::find($id);
-      return view('product.showProduct', ['product' => $product]);
+      return view('product.show', ['product' => $product]);
     }
 
-    public function getAllProducts(){
+    public function getAll(){
         $products = \App\Product::all();
-        return view('product.allProducts', ['products' => $products]);
+        return view('product.all', ['products' => $products]);
     }
 
     public function sell($id){
@@ -36,6 +36,7 @@ class ProductController extends Controller
       $product->name = $request->name;
       $product->price = $request->price;
       $product->stock = $request->stock;
+      $product->description = $request->description;
       $product->save();
       return redirect()->route('home');
     }
@@ -51,6 +52,7 @@ class ProductController extends Controller
         $product->name = $request->name;
         $product->price = $request->price;
         $product->stock = $request->stock;
+        $product->description = $request->description;
         $product->save();
         return redirect()->route('home');
     }

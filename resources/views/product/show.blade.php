@@ -5,6 +5,7 @@
   <div class="ui card">
     <h2>{{$product->name}}</h2>
     <p>{{$product->price / 100}} €</p>
+    <p>{{$product->description}}</p>
     <a href="/del/{{$product->id}}">Supprimer la référence</a>
     <a href="/edit/{{$product->id}}">Editer la référence</a>
     <div>
