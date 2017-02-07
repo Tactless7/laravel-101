@@ -45,4 +45,13 @@ class ProductController extends Controller
         $product->delete();
         return redirect()->route('home');
     }
+
+    public function edit(Request $request, $id){
+        $product = \App\Product::find($id);
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->stock = $request->stock;
+        $product->save();
+        return redirect()->route('home');
+    }
 }

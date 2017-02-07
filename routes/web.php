@@ -26,3 +26,10 @@ Route::get('/add', function(){
 Route::post('/add', 'ProductController@add');
 
 Route::get('/del/{id}', 'ProductController@delete');
+
+Route::get('/edit/{id}', function($id){
+  $product = \App\Product::find($id);
+  return view('product.editProduct', ['product' => $product]);
+});
+
+Route::post('/edit/{id}', 'ProductController@edit');
