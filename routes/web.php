@@ -13,7 +13,7 @@
 
 Route::get('/', 'ProductController@getAll')->name('home');
 
-Route::get('/show/{id}', 'ProductController@getIndex');
+Route::get('/show/{id}', 'ProductController@getIndex')->name('show');
 
 Route::post('/sell/{id}', 'ProductController@sell');
 
@@ -34,4 +34,4 @@ Route::get('/edit/{id}', function($id){
 
 Route::post('/edit/{id}', 'ProductController@edit');
 
-// Route::post('/add/comment', 'ProductController');
+Route::post('/add/comment', 'CommentController@add');

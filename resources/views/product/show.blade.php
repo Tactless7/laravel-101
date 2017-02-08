@@ -24,12 +24,24 @@
     </form>
 
     <div class="ui clearing divider"></div>
-      <h3 class="ui centered header">Ajouter un avis</h3>
-      <form class="ui form" action="/add/comment" method="post">
-        <label for="author">Auteur</label><input type="text" name="author">
-        <label for="content">Contenu</label><textarea name="name" rows="4" cols="50"></textarea>
-        {{ csrf_field() }}
-        <button class="ui primary button" type="submit">Donner son avis</button>
-      </form>
+    
+    <div class="comments">
+      @foreach ($product->comments as $comment)
+      <div class="ui tiny header">{{$comment->author}}, {{$comment->created_at->diffForHumans()}}</div>
+      <div>{{$comment->content}}</div>
+      @endforeach
+    </div>
+
+    <div class="ui clearing divider"></div>
+      <div class="addComment">
+        <h3 class="ui centered header">Ajouter un avis</h3>
+        <form class="ui form" action="/add/comment" method="post">
+          <input type="hidden" name="product_id" value="{{$product->id}}">
+          <label for="author">Auteur</label><input type="text" name="author">
+          <label for="content">Contenu</label><textarea name="content" rows="4" cols="50"></textarea>
+          {{ csrf_field() }}
+          <button class="ui primary button" type="submit">Donner son avis</button>
+        </form>
+      </div>
   </div>
 @stop
